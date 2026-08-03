@@ -12,16 +12,19 @@ const CinematicLayer = dynamic(() => import("@/components/three/CinematicLayer")
 export default function VideoIntro({ soundOn = false }) {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [videoAvailable, setVideoAvailable] = useState(true);
 
   // When the user clicks ENTER on the opening gate, unmute the video.
   // The click counts as a user gesture, so the browser allows sound.
   useEffect(() => {
     if (soundOn && videoRef.current) {
-      videoRef.current.muted = false;
-      setMuted(false);
-      videoRef.current.play().catch(() => {});
+      const timer = setTimeout(() => {
+        videoRef.current.muted = false;
+        setMuted(false);
+        videoRef.current.play().catch(() => {});
+      }, 10);
+      return () => clearTimeout(timer);
     }
   }, [soundOn]);
 
@@ -51,7 +54,6 @@ export default function VideoIntro({ soundOn = false }) {
             ref={videoRef}
             className={styles.mainVideo}
             src="/assets/intro.mp4"
-            autoPlay
             muted
             loop
             playsInline
