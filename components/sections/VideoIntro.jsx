@@ -23,7 +23,7 @@ export default function VideoIntro({ soundOn = false }) {
         videoRef.current.muted = false;
         setMuted(false);
         videoRef.current.play().catch(() => {});
-      }, 10);
+      }, 5);
       return () => clearTimeout(timer);
     }
   }, [soundOn]);
