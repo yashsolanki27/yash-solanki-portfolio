@@ -1,0 +1,155 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  color: #f6f1e8;
+  transition: background 0.4s ease;
+}
+
+.nav.scrolled {
+  background: rgba(7, 7, 9, 0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.brand {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  font-size: 12px;
+  opacity: 0.7;
+  letter-spacing: 0.08em;
+}
+
+.item {
+  position: relative;
+  cursor: pointer;
+  padding: 0 0 4px;
+  transition: opacity 0.2s, color 0.2s;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #ebb27c;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.item:hover {
+  opacity: 1;
+  color: #ebb27c;
+}
+
+.item:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.cta {
+  border: 1px solid rgba(255, 214, 170, 0.45);
+  border-radius: 999px;
+  padding: 9px 18px;
+  color: inherit;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  transition: background 0.2s, border-color 0.2s;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: rgba(255, 214, 170, 0.1);
+  border-color: rgba(255, 214, 170, 0.7);
+}
+
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #f6f1e8;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.mobilePanel {
+  position: fixed;
+  inset: 68px 0 0 0;
+  z-index: 39;
+  background: rgba(7, 7, 9, 0.97);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 24px 28px 40px;
+  overflow-y: auto;
+}
+
+.mobileItem {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: #f6f1e8;
+  font-size: 20px;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  padding: 16px 4px;
+  cursor: pointer;
+}
+
+.mobileItem:hover {
+  color: #ebb27c;
+}
+
+.mobileCta {
+  margin-top: 20px;
+  align-self: flex-start;
+  border: 1px solid rgba(235, 178, 124, 0.5);
+  background: rgba(235, 178, 124, 0.1);
+  border-radius: 999px;
+  padding: 12px 26px;
+  color: #f6f1e8;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .menu,
+  .cta {
+    display: none;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+  }
+}

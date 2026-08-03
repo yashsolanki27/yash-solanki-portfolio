@@ -1,0 +1,26 @@
+{
+  "site": {
+    "tagline": "Hi, Welcome to my Portfolio"
+  },
+  "hero": {
+    "pills": [
+      "Application Support",
+      "OSS/BSS",
+      "ITIL v4",
+      "Root Cause Analysis",
+      "GenAI Diagnostics"
+    ],
+    "cta": "View Work",
+    "availabilityLabel": "Open to Application Support & Functional Application Management roles"
+  },
+  "sections": {
+    "about": "Who I Am",
+    "projects": "Selected Work",
+    "experience": "Case Studies",
+    "credibility": "Achievements & Credibility"
+  },
+  "footer": {
+    "eyebrow": "Open to opportunities",
+    "cta": "Let's build reliable systems together."
+  }
+}

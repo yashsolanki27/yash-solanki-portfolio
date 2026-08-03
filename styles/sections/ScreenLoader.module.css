@@ -1,0 +1,61 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background:
+    radial-gradient(ellipse at center, rgba(217, 115, 13, 0.12) 0%, transparent 60%),
+    #070709;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.overlay.leave {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.36em;
+  color: #ebb27c;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: clamp(36px, 6vw, 76px);
+  letter-spacing: 0.22em;
+  font-weight: 300;
+  color: #f6f1e8;
+  text-align: center;
+  line-height: 1;
+}
+
+.divider {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, transparent, rgba(235, 178, 124, 0.6), transparent);
+}
+
+.button {
+  border: 1px solid rgba(235, 178, 124, 0.5);
+  border-radius: 999px;
+  background: transparent;
+  color: #f6f1e8;
+  padding: 14px 36px;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: rgba(235, 178, 124, 0.1);
+  border-color: rgba(235, 178, 124, 0.9);
+  transform: scale(1.03);
+}

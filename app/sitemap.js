@@ -1,0 +1,12 @@
+export default function sitemap() {
+  const base = "https://yash-solanki.vercel.app";
+
+  return [
+    {
+      url: base,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+  ];
+}

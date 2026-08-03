@@ -1,0 +1,233 @@
+.section {
+  padding: 64px 6vw 48px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(235, 178, 124, 0.22), transparent);
+}
+
+/* Credibility top */
+.top {
+  flex-grow: 1;
+}
+
+.label {
+  color: #ebb27c;
+  letter-spacing: 0.28em;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.sectionTitle {
+  font-size: clamp(28px, 3.5vw, 50px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin-bottom: 40px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* Categorized skills block */
+.skillsBlock {
+  margin-bottom: 48px;
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 32px;
+  margin-top: 4px;
+}
+
+.skillCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skillCatTitle {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #ebb27c;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillTag {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(246, 241, 232, 0.72);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.skillTag:hover {
+  background: rgba(235, 178, 124, 0.08);
+  border-color: rgba(235, 178, 124, 0.3);
+  color: #f6f1e8;
+}
+
+.colTitle {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(246, 241, 232, 0.5);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.item {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(246, 241, 232, 0.7);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.item::before {
+  content: "—";
+  color: rgba(235, 178, 124, 0.4);
+  flex-shrink: 0;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+/* Footer CTA */
+.footerCta {
+  padding-top: 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eyebrow {
+  color: #ebb27c;
+  letter-spacing: 0.28em;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.footerName {
+  font-size: clamp(40px, 7vw, 100px);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  margin: 4px 0 8px;
+  background: linear-gradient(115deg, #f6f1e8 30%, #ebb27c 70%, #d97320 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 0% 0;
+  transition: background-position 0.8s ease;
+}
+
+.footerName:hover {
+  background-position: 100% 0;
+}
+
+.footerTagline {
+  font-size: 16px;
+  color: rgba(246, 241, 232, 0.6);
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  background: rgba(235, 178, 124, 0.1);
+  border: 1px solid rgba(235, 178, 124, 0.5);
+  color: #f6f1e8;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.button:hover {
+  background: rgba(235, 178, 124, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -12px rgba(217, 115, 13, 0.5);
+}
+
+.footerLinks {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footerLink {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(246, 241, 232, 0.45);
+  text-decoration: none;
+  border: none;
+  border-bottom: 1px solid rgba(235, 178, 124, 0.25);
+  padding: 0 0 2px;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.footerLink:hover {
+  color: #ebb27c;
+  border-color: #ebb27c;
+}
+
+.copyright {
+  font-size: 11px;
+  color: rgba(246, 241, 232, 0.28);
+  letter-spacing: 0.1em;
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+  .skillGrid {
+    grid-template-columns: 1fr;
+  }
+}
