@@ -4,14 +4,15 @@
   },
   "hero": {
     "pills": [
+      "AI-Driven Operations",
       "Application Support",
       "OSS/BSS",
       "ITIL v4",
       "Root Cause Analysis",
-      "GenAI Diagnostics"
+      "LangChain / LangGraph"
     ],
     "cta": "View Work",
-    "availabilityLabel": "Open to Application Support & Functional Application Management roles"
+    "availabilityLabel": "Open to Application Support, Functioneel Beheer & AI-driven Application Engineering roles"
   },
   "sections": {
     "about": "Who I Am",
