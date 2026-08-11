@@ -22,7 +22,7 @@ export default function VideoIntro({ soundOn = false }) {
       const timer = setTimeout(() => {
         videoRef.current.muted = false;
         setMuted(false);
-        videoRef.current.play().catch(() => {});
+        videoRef.current.play().then(() => setPlaying(true)).catch(() => {});
       }, 1);
       return () => clearTimeout(timer);
     }
@@ -57,6 +57,8 @@ export default function VideoIntro({ soundOn = false }) {
             muted
             loop
             playsInline
+            onPlay={() => setPlaying(true)}
+            onPause={() => setPlaying(false)}
             onError={() => setVideoAvailable(false)}
           />
         </>

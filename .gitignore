@@ -26,6 +26,9 @@
 dev-server*.log
 *.txt
 
+# temp files
+yash f34f.png
+
 # debug
 npm-debug.log*
 yarn-debug.log*
