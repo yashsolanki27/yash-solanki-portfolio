@@ -4,13 +4,13 @@ import styles from "@/styles/sections/DevToolingSection.module.css";
 export default function DevToolingSection() {
   return (
     <section className={styles.section} id="devtooling">
-      <p className={styles.label} data-reveal>AI/LLM Engineering & Dev Tooling</p>
+      <p className={styles.label} data-reveal>Core Skills & Tooling</p>
       <h2 className={styles.heading} data-reveal>
-        The stack behind<br />AI-driven operations
+        The toolkit behind<br />application support
       </h2>
       <p className={styles.intro} data-reveal>
-        Beyond production support — building RAG pipelines, agentic workflows,
-        and LLM-based intelligence layers on enterprise telecom systems.
+        Application support across enterprise CRM and OSS/BSS platforms — ITIL v4,
+        RCA, SLA compliance, and REST/SOAP API testing.
       </p>
       <div className={styles.grid} data-reveal>
         {profile.devSkillCategories.map((cat) => (

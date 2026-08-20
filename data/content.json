@@ -4,15 +4,15 @@
   },
   "hero": {
     "pills": [
-      "AI-Driven Operations",
       "Application Support",
       "OSS/BSS",
+      "CRM Platforms",
       "ITIL v4",
       "Root Cause Analysis",
-      "LangChain / LangGraph"
+      "SLA Compliance"
     ],
     "cta": "View Work",
-    "availabilityLabel": "Open to Application Support, Functioneel Beheer & AI-driven Application Engineering roles"
+    "availabilityLabel": "Open to Application Support Engineer, ICT Engineer & Functioneel Beheer roles"
   },
   "sections": {
     "about": "Who I Am",

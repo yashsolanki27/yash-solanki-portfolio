@@ -19,8 +19,11 @@ describe("profile.json structure", () => {
     });
   });
 
-  it("has resume URL pointing to PDF", () => {
-    expect(profile.resumeUrl).toMatch(/\.pdf$/);
+  it("has resume URL pointing to a PDF when set", () => {
+    expect(typeof profile.resumeUrl).toBe("string");
+    if (profile.resumeUrl) {
+      expect(profile.resumeUrl).toMatch(/\.pdf$/);
+    }
   });
 
   it("has at least one project", () => {

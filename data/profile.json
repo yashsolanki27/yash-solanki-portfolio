@@ -4,30 +4,30 @@
     "last": "Solanki",
     "full": "Yash Solanki"
   },
-  "headline": "AI-driven Application Engineering | Functional Application Management",
-  "description": "Application Support Engineer extending into AI-driven operations — building RAG, agentic workflows (LangChain/LangGraph), and LLM-based intelligence layers on production telecom systems. Currently at FGS B.V., Netherlands.",
+  "headline": "Application Support Engineer | OSS/BSS & CRM Platforms | ITIL v4",
+  "description": "Application Support Engineer with 3+ years of experience across enterprise CRM and OSS/BSS platforms in telecom — ITIL v4, RCA, SLA compliance, and REST/SOAP API testing. Currently at FGS B.V., Netherlands, on a transferable HSM visa.",
   "location": {
     "city": "Voorburg",
     "state": "South Holland",
     "country": "Netherlands"
   },
   "roles": {
-    "short": "AI-driven Application Engineer",
+    "short": "Application Support Engineer",
     "rotating": [
-      "AI-driven Application Engineering",
-      "Functioneel Beheer",
       "Application Support Engineer",
-      "L2/L3 Production Support",
+      "ICT Engineer",
+      "Functioneel Beheer",
+      "L2/L3 Application Support",
       "OSS/BSS Specialist",
       "Root Cause Analyst"
     ],
-    "detailed": "AI-driven Application Engineering — CRM & OSS/BSS · ITIL v4 · RCA · GenAI Diagnostics"
+    "detailed": "Application Support Engineering — CRM & OSS/BSS · ITIL v4 · RCA"
   },
   "availability": {
-    "status": "Open to Application Support, Functioneel Beheer & AI-driven Application Engineering roles",
+    "status": "Open to Application Support Engineer, ICT Engineer & Functioneel Beheer roles",
     "scope": "Netherlands — HSM Visa, transferable to IND Recognised Sponsors"
   },
-  "bio": "Application Support Engineer (3+ yrs) across enterprise CRM and OSS/BSS platforms — ITIL v4, RCA, SLA-driven — including a 100M+ subscriber government telecom deployment (BSNL, India). Extending into AI-driven operations: building RAG, agentic workflows (LangChain/LangGraph), and LLM-based intelligence layers (eDO AI, AI in a Box) on production telecom systems. Strong in Python and GenAI-assisted diagnostics. Currently at FGS B.V. in the Netherlands on a transferable HSM visa, open to Application Support, Functioneel Beheer, and AI-driven Application Engineering roles.",
+  "bio": "Application Support Engineer with 3+ years of experience across enterprise CRM and OSS/BSS platforms in telecom, including a 100M+ subscriber government deployment (BSNL, India). Skilled in ITIL v4 Incident Management, Root Cause Analysis (RCA), SLA Compliance, SQL/MySQL data validation, Role-Based Access Control (RBAC), and REST/SOAP API testing (Postman). Experienced with Microsoft 365 and Azure AD administration, JIRA, BMC Remedy, and Zendesk in Agile/Scrum delivery environments. Currently at FGS B.V., Netherlands, on a transferable HSM visa.",
   "stats": [
     { "value": "3+", "label": "Years in Application & Production Support" },
     { "value": "100M+", "label": "Subscriber Telecom Platform Supported" },
@@ -39,26 +39,33 @@
     "Root Cause Analysis (RCA)",
     "SLA Compliance",
     "MTTR Reduction",
+    "Escalation Management",
+    "Role-Based Access Control (RBAC)",
     "OSS/BSS",
     "CRM Platforms",
     "Order-to-Activate (O2A)",
+    "Provisioning & Activation",
     "MySQL",
+    "SQL",
     "Linux/Unix",
-    "Python",
-    "RAG & Embeddings",
-    "LangChain / LangGraph",
-    "MCP & Agentic Workflows",
-    "LLMOps & LangSmith",
-    "GenAI-Assisted Diagnostics",
-    "Escalation Management",
+    "Microsoft 365",
+    "Azure AD",
+    "Docker",
+    "Kubernetes",
+    "Postman (REST/SOAP APIs)",
+    "JIRA",
+    "Zendesk",
+    "BMC Remedy",
+    "Agile/Scrum",
+    "Python (Log Parsing & Automation)",
+    "Claude (AI-Assisted Documentation)",
     "Microservices Architecture"
   ],
   "socials": [
     { "label": "Email", "href": "mailto:solankiyash7227@gmail.com" },
-    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/yashsolanki27" },
-    { "label": "GitHub", "href": "https://github.com/yashsolanki27" }
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/yashsolanki27" }
   ],
-  "resumeUrl": "/assets/Yash_Solanki_CV.pdf",
+  "resumeUrl": "/assets/Yash-Solanki-Application-Support-Engineer.pdf",
   "tagline": "Root Cause First. Business Impact Always.",
   "education": {
     "degree": "B.E. — Computer Science",
@@ -69,19 +76,12 @@
   "projects": [
     {
       "id": 1,
-      "title": "eDO AI — AI-Assisted Intelligence Layer",
-      "type": "LangChain / LangGraph / RAG",
+      "title": "Zsmart 9.2 Platform Upgrade — BSNL (Government of India)",
+      "type": "OSS/BSS · CRM · Live Cutover & Migration",
+      "subtitle": "Live cutover support across a 100M+ subscriber national telecom platform",
       "link": "",
-      "desc": "Built LangChain-based retrieval chains on RAG + embeddings for duplicate ticket detection and evidence-grounded resolution recall, orchestrated via LangGraph for multi-step RCA reasoning and structured triage decisions. Tool access via MCP, human override retained on all routing. Extended eDO from a manual R&D escalation portal into an AI-assisted intelligence layer for telecom incident handling.",
-      "tech": ["Python", "LangChain", "LangGraph", "RAG", "MCP", "LangSmith", "Embeddings", "pgvector"]
-    },
-    {
-      "id": 2,
-      "title": "GenAI-Assisted Incident Diagnostics",
-      "type": "Internal Workflow Tool",
-      "link": "",
-      "desc": "Introduced GenAI tooling and Python scripting into CRM incident investigation and Functioneel Beheer workflows at FGS B.V., accelerating log parsing and reducing manual documentation effort during day-to-day support.",
-      "tech": ["Python", "Claude", "Log Parsing", "CRM Support", "Azure AD"]
+      "desc": "Executed live cutover support and production validation across BSNL's 100M+ national subscriber base, reducing planned migration window overruns by 20%. Secured post-release data stability by resolving 3,500+ critical database migration discrepancies via targeted MySQL queries before they impacted active billing cycles. Guaranteed seamless order activation by validating 40+ distinct end-to-end business flows and tracking 180+ critical defects in JIRA across OSS/BSS, CRM, CPQ, and DSCM modules, managing operational integration of the Huawei CDOT voice module with zero downtime.",
+      "tech": ["OSS/BSS", "CRM", "CPQ", "DSCM", "MySQL", "JIRA", "Live Cutover", "Huawei CDOT"]
     }
   ],
   "caseStudies": [
@@ -123,19 +123,19 @@
   ],
   "experience": [
     {
-      "role": "Application Support Engineer — CRM Application Support",
+      "role": "Application Support Engineer",
       "company": "FGS B.V.",
       "period": "Jun 2026 — Present",
-      "focus": "GenAI-assisted diagnostics, CRM incident ownership, Microsoft 365 / Azure AD support, AI in a Box / CX platform deployment"
+      "focus": "CRM incident resolution, Microsoft 365 / Azure AD administration, Python & Claude log-parsing automation, Functioneel Beheer support"
     },
     {
-      "role": "Senior Engineer — AI-Driven Operations & Product Support (OSS/BSS)",
+      "role": "Senior Engineer",
       "company": "Whale Cloud Technology India Pvt Ltd",
       "period": "Apr 2025 — Jan 2026",
-      "focus": "O2A workflow optimization, AI-driven ticket intelligence (LangChain/RAG/LangGraph), MySQL data integrity, cross-module dependency mapping"
+      "focus": "O2A workflow optimization, RCA & Linux/Unix log analysis, MySQL data integrity, REST/SOAP API validation, functional testing"
     },
     {
-      "role": "System Engineer — L2/L3 OSS/BSS & Application Support",
+      "role": "System Engineer",
       "company": "Tenet Computer and Communication Pvt Ltd",
       "period": "Oct 2022 — Mar 2025",
       "focus": "Incident routing, MTTR reduction, RBAC platform security, SLA compliance analytics, Linux/Unix log analysis"
@@ -143,85 +143,58 @@
   ],
   "devSkillCategories": [
     {
-      "title": "AI/LLM Engineering",
-      "items": ["Python", "LangChain", "LangGraph", "RAG", "Embeddings", "Vector Search", "pgvector", "MCP"]
-    },
-    {
-      "title": "LLMOps & Observability",
-      "items": ["LangSmith", "Evals", "Guardrails", "Token Cost Optimization", "Context Window Management"]
-    },
-    {
       "title": "Application Support & ITSM",
-      "items": ["ITIL v4", "JIRA", "Zendesk", "BMC Remedy", "Postman", "REST/SOAP APIs"]
+      "items": ["L2/L3 Application Support", "ITIL v4 Incident Management", "Root Cause Analysis (RCA)", "SLA Compliance", "MTTR Reduction", "Escalation Management", "RBAC", "Microservices Troubleshooting"]
     },
     {
-      "title": "Telecom & Cloud",
-      "items": ["OSS/BSS", "CRM", "MySQL", "Linux/Unix", "Docker", "Kubernetes", "Azure AD", "Microsoft 365"]
+      "title": "Telecom Domain",
+      "items": ["OSS/BSS", "CRM", "Order-to-Activate (O2A)", "Provisioning & Activation"]
     },
     {
-      "title": "Scripting & Automation",
-      "items": ["Python", "Bash Script", "Log Parsing", "Data Validation"]
+      "title": "Databases & Operating Systems",
+      "items": ["MySQL (Data Validation)", "SQL", "Linux/Unix"]
     },
     {
-      "title": "AI Assistants & Productivity",
-      "items": ["Claude", "Claude Code", "OpenAI Codex", "Cursor"]
+      "title": "Cloud & Enterprise Platforms",
+      "items": ["Microsoft 365 Administration", "Azure AD (User Access & Sync)", "Docker", "Kubernetes"]
+    },
+    {
+      "title": "API & Enterprise Tools",
+      "items": ["Postman (REST/SOAP APIs)", "JIRA", "Zendesk", "BMC Remedy"]
+    },
+    {
+      "title": "Delivery & Methodologies",
+      "items": ["Agile/Scrum (User Stories)", "Release Deployment", "Functional/Flow Testing", "Defect Management"]
+    },
+    {
+      "title": "Scripting & AI-Assisted Tools",
+      "items": ["Python (Log Parsing & Automation)", "Claude (AI-Assisted Documentation)"]
     }
   ],
   "skillCategories": [
     {
-      "title": "AI/LLM Engineering",
-      "items": [
-        "RAG & Embeddings",
-        "LangChain / LangGraph",
-        "MCP & Agentic Workflows",
-        "LLMOps & LangSmith",
-        "Evals & Guardrails",
-        "Python",
-        "Vector Search (pgvector)"
-      ]
-    },
-    {
       "title": "Application Support & ITSM",
-      "items": [
-        "L2/L3 Application Support",
-        "ITIL v4 Incident Management",
-        "Root Cause Analysis (RCA)",
-        "SLA Compliance",
-        "MTTR Reduction",
-        "Escalation Management"
-      ]
+      "items": ["L2/L3 Application Support", "ITIL v4 Incident Management", "Root Cause Analysis (RCA)", "SLA Compliance", "MTTR Reduction", "Escalation Management", "RBAC"]
     },
     {
       "title": "Telecom & OSS/BSS",
-      "items": [
-        "OSS/BSS",
-        "CRM",
-        "Order-to-Activate (O2A)",
-        "Provisioning & Activation",
-        "Microservices Architecture"
-      ]
+      "items": ["OSS/BSS", "CRM", "Order-to-Activate (O2A)", "Provisioning & Activation", "Microservices Architecture"]
     },
     {
       "title": "Databases, OS & Cloud",
-      "items": [
-        "MySQL",
-        "Linux/Unix",
-        "Microsoft 365",
-        "Azure AD",
-        "Docker",
-        "Kubernetes"
-      ]
+      "items": ["MySQL", "SQL", "Linux/Unix", "Microsoft 365", "Azure AD", "Docker", "Kubernetes"]
     },
     {
-      "title": "Tools & Platforms",
-      "items": [
-        "Postman",
-        "JIRA",
-        "Zendesk",
-        "BMC Remedy",
-        "Git",
-        "GenAI-Assisted Diagnostics"
-      ]
+      "title": "API & Enterprise Tools",
+      "items": ["Postman (REST/SOAP APIs)", "JIRA", "Zendesk", "BMC Remedy"]
+    },
+    {
+      "title": "Delivery & Methodologies",
+      "items": ["Agile/Scrum", "Release Deployment", "Functional/Flow Testing", "Defect Management"]
+    },
+    {
+      "title": "Scripting & AI-Assisted Tools",
+      "items": ["Python", "Claude"]
     }
   ]
 }

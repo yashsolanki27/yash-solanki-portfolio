@@ -36,11 +36,7 @@ export default function ProjectsSection() {
                 >
                   Code ↗
                 </a>
-              ) : (
-                <span className={styles.link} style={{ opacity: 0.5, cursor: "default" }}>
-                  Repo Coming Soon
-                </span>
-              )}
+              ) : null}
             </div>
           </article>
         ))}

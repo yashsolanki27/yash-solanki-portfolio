@@ -31,7 +31,7 @@ describe("Navbar", () => {
     expect(screen.getByRole("button", { name: /home/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /about/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /work/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /dev tools/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /skills/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /case studies/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /education/i })).toBeInTheDocument();
   });

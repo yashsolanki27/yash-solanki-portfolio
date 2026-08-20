@@ -17,7 +17,7 @@ export default function EducationSection() {
           <div className={styles.institution}>
             {institution} · {location}
           </div>
-          <div className={styles.cgpa}>CGPA: {cgpa}</div>
+          {cgpa && <div className={styles.cgpa}>CGPA: {cgpa}</div>}
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ const ITEMS = [
   { label: "Home", href: "#intro" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#projects" },
-  { label: "Dev Tools", href: "#devtooling" },
+  { label: "Skills", href: "#devtooling" },
   { label: "Case Studies", href: "#casestudies" },
   { label: "Education", href: "#education" },
 ];

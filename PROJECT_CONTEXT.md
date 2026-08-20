@@ -50,7 +50,7 @@ Convert visitors (recruiters, hiring managers) into job/freelance opportunities 
 - `data/content.json` — site copy/labels (UI strings)
 - `lib/gsap.js` — GSAP + ScrollTrigger singleton
 - `styles/` — CSS Modules (sections/, ui/) matched 1:1 to components
-- `public/assets/` — YASH.png, intro.mp4, Yash_Solanki_CV.pdf
+- `public/assets/` — YASH.png, intro.mp4, Yash-Solanki-Application-Support-Engineer.pdf
 
 ## Content Architecture (Important)
 - Site content is **data-driven**: edit `data/profile.json` (personal facts) or `data/content.json` (UI copy). Components render whatever is there — no per-fact code changes.

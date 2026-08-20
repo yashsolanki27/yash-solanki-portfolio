@@ -85,15 +85,17 @@ export default function HeroSection() {
           >
             {content.hero.cta} →
           </a>
-          <a
-            className={styles.ctaBtn}
-            href={profile.resumeUrl}
-            target="_blank"
-            rel="noreferrer"
-            style={{ background: "transparent", border: "1px solid rgba(235, 178, 124, 0.5)" }}
-          >
-            Resume ↓
-          </a>
+          {profile.resumeUrl && (
+            <a
+              className={styles.ctaBtn}
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              style={{ background: "transparent", border: "1px solid rgba(235, 178, 124, 0.5)" }}
+            >
+              Resume ↓
+            </a>
+          )}
           <div className={styles.availCard}>
             <span className={styles.dot} />
             <span>{content.hero.availabilityLabel}</span>

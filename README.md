@@ -43,7 +43,7 @@ Get a free key at https://web3forms.com.
 - `public/assets/YASH.png` — hero photo
 - `public/assets/intro.mp4` — optional intro video (falls back to a gradient
   background if this file is missing)
-- `public/assets/Yash_Solanki_CV.pdf` — downloadable resume
+- `public/assets/Yash-Solanki-Application-Support-Engineer.pdf` — downloadable resume
 - `public/mainog2.jpg` — social share preview (LinkedIn/X link previews)
 
 ## Deploy

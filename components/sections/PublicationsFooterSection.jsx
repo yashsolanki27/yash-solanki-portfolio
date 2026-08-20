@@ -19,14 +19,16 @@ export default function PublicationsFooterSection() {
               <p key={item} className={styles.item}>{item}</p>
             ))}
           </div>
-          <div>
-            <p className={styles.colTitle}>Certifications</p>
-            {profile.certifications.map((item) => (
-              <p key={item.name} className={styles.item}>
-                {item.name} <span style={{ opacity: 0.55 }}>— {item.issuer}</span>
-              </p>
-            ))}
-          </div>
+          {profile.certifications?.length > 0 && (
+            <div>
+              <p className={styles.colTitle}>Certifications</p>
+              {profile.certifications.map((item) => (
+                <p key={item.name} className={styles.item}>
+                  {item.name} <span style={{ opacity: 0.55 }}>— {item.issuer}</span>
+                </p>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Core tools & skills — categorized */}
@@ -56,15 +58,17 @@ export default function PublicationsFooterSection() {
         <ContactForm />
 
         <div className={styles.ctaRow}>
-          <a
-            href={profile.resumeUrl}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.button}
-            style={{ background: "transparent", border: "1px solid rgba(235, 178, 124, 0.5)" }}
-          >
-            Download Resume ↓
-          </a>
+          {profile.resumeUrl && (
+            <a
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.button}
+              style={{ background: "transparent", border: "1px solid rgba(235, 178, 124, 0.5)" }}
+            >
+              Download Resume ↓
+            </a>
+          )}
           <div className={styles.footerLinks}>
             {profile.socials.map((s) =>
               s.label === "Email" ? (
