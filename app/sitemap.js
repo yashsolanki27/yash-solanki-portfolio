@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = "https://yash-solanki.vercel.app";
+  const base = "https://yash-portfolio-silk.vercel.app";
 
   return [
     {

@@ -13,7 +13,7 @@ const inter = Inter({
   variable: "--font-body",
 });
 
-const SITE_URL = "https://yash-solanki.vercel.app";
+const SITE_URL = "https://yash-portfolio-silk.vercel.app";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -58,8 +58,8 @@ export default function RootLayout({ children }) {
     name: profile.name.full,
     jobTitle: profile.headline,
     description: profile.description,
-    url: "https://yash-solanki.vercel.app",
-    image: "https://yash-solanki.vercel.app/assets/YASH.png",
+    url: "https://yash-portfolio-silk.vercel.app",
+    image: "https://yash-portfolio-silk.vercel.app/assets/YASH.png",
     address: {
       "@type": "PostalAddress",
       addressLocality: profile.location.city,

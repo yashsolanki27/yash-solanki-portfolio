@@ -71,7 +71,7 @@ No other external APIs, database, or auth provider.
 ## Deployment
 | Item | Detail |
 |---|---|
-| Target | Vercel (`yash-solanki.vercel.app` — metadata/sitemap/robots) |
+| Target | Vercel (`yash-portfolio-silk.vercel.app` — metadata/sitemap/robots) |
 | Required env | `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` set in Vercel Project Settings → Environment Variables; `.env.local` is gitignored and never reaches Vercel |
 | Image optimization | Enabled via defaults — do not re-add `images.unoptimized: true` (fixed regression) |
 

@@ -3,7 +3,7 @@
 ## Project Identity
 - **Name:** Yash Solanki — Personal Portfolio
 - **Repo:** yash-solanki-portfolio
-- **Live:** https://yash-solanki.vercel.app
+- **Live:** https://yash-portfolio-silk.vercel.app
 - **Purpose:** Professional portfolio site for Yash Solanki, an Application Support Engineer (CRM & OSS/BSS, ITIL v4, RCA).
 - **Problem it solves:** Presents his skills, experience, and credibility to recruiters/hiring managers without a backend — content is fully static and deployable to any host.
 
