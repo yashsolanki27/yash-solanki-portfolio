@@ -113,6 +113,14 @@
   box-shadow: 0 12px 32px -12px rgba(217, 115, 13, 0.5);
 }
 
+.ctaBtnOutline {
+  background: transparent;
+}
+
+.ctaBtnOutline:hover {
+  background: rgba(235, 178, 124, 0.1);
+}
+
 .availCard {
   display: flex;
   align-items: center;

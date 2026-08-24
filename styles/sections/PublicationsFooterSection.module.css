@@ -190,6 +190,19 @@
   box-shadow: 0 12px 32px -12px rgba(217, 115, 13, 0.5);
 }
 
+.buttonOutline {
+  background: transparent;
+  border: 1px solid rgba(235, 178, 124, 0.5);
+}
+
+.buttonOutline:hover {
+  background: rgba(235, 178, 124, 0.1);
+}
+
+.issuer {
+  opacity: 0.55;
+}
+
 .footerLinks {
   display: flex;
   gap: 20px;

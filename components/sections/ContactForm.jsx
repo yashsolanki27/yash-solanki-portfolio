@@ -62,13 +62,20 @@ export default function ContactForm() {
   const honeypotRef = useRef(null);
   const submittingRef = useRef(false);
   const toastTimer = useRef(null);
+  const statusTimer = useRef(null);
 
   const isValid = useMemo(
     () => FIELDS.every((field) => !VALIDATORS[field](values[field])),
     [values]
   );
 
-  useEffect(() => () => clearTimeout(toastTimer.current), []);
+  useEffect(
+    () => () => {
+      clearTimeout(toastTimer.current);
+      clearTimeout(statusTimer.current);
+    },
+    []
+  );
 
   function showToast(type, message) {
     clearTimeout(toastTimer.current);
@@ -121,6 +128,11 @@ export default function ContactForm() {
     setTouched(INITIAL_TOUCHED);
   }
 
+  function scheduleStatusReset(delay = 4000) {
+    clearTimeout(statusTimer.current);
+    statusTimer.current = setTimeout(() => setStatus("idle"), delay);
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -138,9 +150,6 @@ export default function ContactForm() {
     }
 
     if (!ACCESS_KEY) {
-      console.error(
-        "Missing NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY — add it to .env.local (see .env.local.example)."
-      );
       showToast("error", "Form is not configured yet. Please try again later.");
       return;
     }
@@ -169,16 +178,16 @@ export default function ContactForm() {
         setStatus("success");
         resetForm();
         showToast("success", "Message sent — I'll get back to you within 24–48 hours.");
-        setTimeout(() => setStatus("idle"), 4000);
+        scheduleStatusReset();
       } else {
         setStatus("error");
         showToast("error", "Something went wrong sending your message. Please try again.");
-        setTimeout(() => setStatus("idle"), 4000);
+        scheduleStatusReset();
       }
     } catch (err) {
       setStatus("error");
       showToast("error", "Network error. Please check your connection and try again.");
-      setTimeout(() => setStatus("idle"), 4000);
+      scheduleStatusReset();
     } finally {
       submittingRef.current = false;
     }

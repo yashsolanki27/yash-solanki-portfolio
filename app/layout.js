@@ -13,13 +13,16 @@ const inter = Inter({
   variable: "--font-body",
 });
 
-const SITE_URL = "https://yash-portfolio-silk.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://yash-portfolio-silk.vercel.app";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Yash Solanki | Application Support Engineer",
   description:
     "Portfolio for Yash Solanki, Application Support Engineer specializing in CRM & OSS/BSS production support, ITIL v4, and root cause analysis.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Yash Solanki | Application Support Engineer",
     description:
@@ -58,8 +61,8 @@ export default function RootLayout({ children }) {
     name: profile.name.full,
     jobTitle: profile.headline,
     description: profile.description,
-    url: "https://yash-portfolio-silk.vercel.app",
-    image: "https://yash-portfolio-silk.vercel.app/assets/YASH.png",
+    url: SITE_URL,
+    image: `${SITE_URL}/assets/YASH.png`,
     address: {
       "@type": "PostalAddress",
       addressLocality: profile.location.city,

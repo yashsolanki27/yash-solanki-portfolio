@@ -54,6 +54,7 @@ export default function VideoIntro({ soundOn = false }) {
             ref={videoRef}
             className={styles.mainVideo}
             src="/assets/intro.mp4"
+            preload="metadata"
             muted
             loop
             playsInline
@@ -86,13 +87,9 @@ export default function VideoIntro({ soundOn = false }) {
         </div>
       )}
       {videoAvailable && muted && <div className={styles.hint}>Tap for sound</div>}
-      <button
-        type="button"
-        className={styles.scrollCue}
-        onClick={() => document.querySelector("#hero")?.scrollIntoView({ behavior: "smooth" })}
-      >
+      <a className={styles.scrollCue} href="#hero">
         Scroll
-      </button>
+      </a>
     </section>
   );
 }

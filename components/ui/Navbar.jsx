@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import styles from "@/styles/ui/Navbar.module.css";
 
@@ -16,10 +16,19 @@ const ITEMS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const menuToggleRef = useRef(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 60);
+        ticking = false;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -30,36 +39,42 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
-  function goTo(href) {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        menuToggleRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [mobileOpen]);
+
+  function closeMobileMenu() {
     setMobileOpen(false);
   }
 
   return (
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
-      <div className={styles.brand}>YASH SOLANKI</div>
+      <a className={styles.brand} href="#intro">
+        YASH SOLANKI
+      </a>
 
       <nav className={styles.menu} aria-label="Primary">
         {ITEMS.map((item) => (
-          <button
-            key={item.label}
-            type="button"
-            className={styles.item}
-            onClick={() => goTo(item.href)}
-          >
+          <a key={item.label} href={item.href} className={styles.item}>
             {item.label}
-          </button>
+          </a>
         ))}
       </nav>
 
-      <button
-        className={styles.cta}
-        onClick={() => goTo("#contact")}
-      >
+      <a className={styles.cta} href="#contact">
         Contact
-      </button>
+      </a>
 
       <button
+        ref={menuToggleRef}
         type="button"
         className={styles.menuToggle}
         aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -72,22 +87,18 @@ export default function Navbar() {
       {mobileOpen && (
         <nav className={styles.mobilePanel} aria-label="Mobile">
           {ITEMS.map((item) => (
-            <button
+            <a
               key={item.label}
-              type="button"
+              href={item.href}
               className={styles.mobileItem}
-              onClick={() => goTo(item.href)}
+              onClick={closeMobileMenu}
             >
               {item.label}
-            </button>
+            </a>
           ))}
-          <button
-            type="button"
-            className={styles.mobileCta}
-            onClick={() => goTo("#contact")}
-          >
+          <a className={styles.mobileCta} href="#contact" onClick={closeMobileMenu}>
             Contact
-          </button>
+          </a>
         </nav>
       )}
     </header>

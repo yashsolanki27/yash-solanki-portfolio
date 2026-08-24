@@ -76,6 +76,18 @@
   "projects": [
     {
       "id": 1,
+      "title": "LogPulse — Automated OSS/BSS Log Triage & RCA Platform",
+      "type": "AI & Automation · FastAPI · Groq LLM",
+      "subtitle": "Sub-second root cause classification and automated Jira RCA ticket generation",
+      "links": [
+        { "label": "Live Demo", "href": "https://log-pulse.up.railway.app" },
+        { "label": "GitHub", "href": "https://github.com/yashsolanki27/log-triage-assistant" }
+      ],
+      "desc": "Architected and deployed an automated Root Cause Analysis (RCA) triage platform designed to eliminate manual log analysis bottlenecks across complex OSS/BSS order-to-activate (O2A) pipelines and CRM integrations. Engineered a high-throughput Python/FastAPI backend with sub-second Groq LLM inference to parse unstructured logs, extract diagnostic error signatures, and classify failures across a 5-part telecom error taxonomy (OrderEngine task sequencing, DSLAM node provisioning, CRM-OSS state transition blocks, and ISAP/OFM API integration errors). Enforced a self-policing <70% confidence threshold for human review, automated Standard Operating Procedure (SOP) runbook command generation, and built 1-click Jira/ServiceNow ticket formatters backed by 99 automated test fences — reducing incident diagnosis time from ~20 minutes to under 1 second with 95%+ classification accuracy.",
+      "tech": ["FastAPI", "Python", "Groq LLM", "OSS/BSS", "Root Cause Analysis (RCA)", "ITIL v4", "SQLite", "JIRA Integration", "Docker & Railway", "REST API"]
+    },
+    {
+      "id": 2,
       "title": "Zsmart 9.2 Platform Upgrade — BSNL (Government of India)",
       "type": "OSS/BSS · CRM · Live Cutover & Migration",
       "subtitle": "Live cutover support across a 100M+ subscriber national telecom platform",

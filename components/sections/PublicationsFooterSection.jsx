@@ -24,7 +24,7 @@ export default function PublicationsFooterSection() {
               <p className={styles.colTitle}>Certifications</p>
               {profile.certifications.map((item) => (
                 <p key={item.name} className={styles.item}>
-                  {item.name} <span style={{ opacity: 0.55 }}>— {item.issuer}</span>
+                  {item.name} <span className={styles.issuer}>— {item.issuer}</span>
                 </p>
               ))}
             </div>
@@ -63,8 +63,7 @@ export default function PublicationsFooterSection() {
               href={profile.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className={styles.button}
-              style={{ background: "transparent", border: "1px solid rgba(235, 178, 124, 0.5)" }}
+              className={`${styles.button} ${styles.buttonOutline}`}
             >
               Download Resume ↓
             </a>
@@ -92,7 +91,8 @@ export default function PublicationsFooterSection() {
           </div>
         </div>
         <p className={styles.copyright}>
-          © 2026 {profile.name.full} · {profile.location.city}, {profile.location.country}
+          © {new Date().getFullYear()} {profile.name.full} · {profile.location.city},{" "}
+          {profile.location.country}
         </p>
       </div>
     </section>

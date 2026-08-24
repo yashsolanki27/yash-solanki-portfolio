@@ -26,19 +26,19 @@ describe("Navbar", () => {
     expect(screen.getByText(/yash solanki/i)).toBeInTheDocument();
   });
 
-  it("renders all navigation items", () => {
+  it("renders all navigation items as links", () => {
     render(<Navbar />);
-    expect(screen.getByRole("button", { name: /home/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /about/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /work/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /skills/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /case studies/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /education/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /home/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^about$/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /work/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /skills/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /case studies/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /education/i })).toBeInTheDocument();
   });
 
-  it("renders the Contact CTA button", () => {
+  it("renders the Contact CTA link", () => {
     render(<Navbar />);
-    expect(screen.getByRole("button", { name: /contact/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: /contact/i })[0]).toBeInTheDocument();
   });
 
   it("renders the mobile menu toggle", () => {
@@ -58,12 +58,22 @@ describe("Navbar", () => {
     const toggle = screen.getByRole("button", { name: /open menu/i });
     fireEvent.click(toggle);
 
-    // When mobile menu is open, there are two "About" buttons (desktop + mobile)
+    // When mobile menu is open, there are two "About" links (desktop + mobile)
     // Click the mobile one (inside mobilePanel)
-    const aboutBtns = screen.getAllByRole("button", { name: /^about$/i });
-    const mobileAboutBtn = aboutBtns.find((btn) => btn.className.includes("mobileItem"));
-    fireEvent.click(mobileAboutBtn);
+    const aboutLinks = screen.getAllByRole("link", { name: /^about$/i });
+    const mobileAboutLink = aboutLinks.find((link) => link.className.includes("mobileItem"));
+    fireEvent.click(mobileAboutLink);
 
+    expect(screen.getByRole("button", { name: /open menu/i })).toBeInTheDocument();
+  });
+
+  it("closes mobile menu on Escape key", () => {
+    render(<Navbar />);
+    const toggle = screen.getByRole("button", { name: /open menu/i });
+    fireEvent.click(toggle);
+    expect(screen.getByRole("button", { name: /close menu/i })).toBeInTheDocument();
+
+    fireEvent.keyDown(window, { key: "Escape" });
     expect(screen.getByRole("button", { name: /open menu/i })).toBeInTheDocument();
   });
 

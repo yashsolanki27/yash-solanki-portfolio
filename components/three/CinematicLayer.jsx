@@ -9,11 +9,59 @@ export default function CinematicLayer() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let THREE, scene, camera, renderer, particles, animId;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let THREE, scene, camera, renderer, particles, geo, mat, animId;
+    let disposed = false;
+    let running = false;
+    let inView = true;
     let mouse = { x: 0, y: 0 };
+    let t = 0;
+
+    function startLoop() {
+      if (running || !renderer || !inView || document.hidden) return;
+      running = true;
+      animId = requestAnimationFrame(animate);
+    }
+
+    function stopLoop() {
+      running = false;
+      cancelAnimationFrame(animId);
+    }
+
+    function animate() {
+      animId = requestAnimationFrame(animate);
+      t += 0.0004;
+      particles.rotation.y = t * 0.06 + mouse.x * 0.04;
+      particles.rotation.x = mouse.y * 0.025;
+      const posArr = geo.attributes.position.array;
+      for (let i = 0; i < posArr.length / 3; i++) {
+        posArr[i * 3 + 1] += Math.sin(t * 0.8 + i * 0.3) * 0.0008;
+      }
+      geo.attributes.position.needsUpdate = true;
+      renderer.render(scene, camera);
+    }
+
+    function onMouse(e) {
+      mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouse.y = -(e.clientY / window.innerHeight - 0.5) * 2;
+    }
+
+    function onResize() {
+      if (!canvas || !renderer || !camera) return;
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+
+    function onVisibility() {
+      if (document.hidden) stopLoop();
+      else startLoop();
+    }
 
     async function init() {
       THREE = await import("three");
+      if (disposed) return;
 
       renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
@@ -46,12 +94,12 @@ export default function CinematicLayer() {
         }
       }
 
-      const geo = new THREE.BufferGeometry();
+      geo = new THREE.BufferGeometry();
       geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
       geo.setAttribute("size", new THREE.BufferAttribute(sizes, 1));
       geo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
-      const mat = new THREE.PointsMaterial({
+      mat = new THREE.PointsMaterial({
         size: 0.07,
         vertexColors: true,
         transparent: true,
@@ -66,42 +114,23 @@ export default function CinematicLayer() {
 
       window.addEventListener("mousemove", onMouse);
       window.addEventListener("resize", onResize);
+      document.addEventListener("visibilitychange", onVisibility);
 
-      let t = 0;
-      function animate() {
-        animId = requestAnimationFrame(animate);
-        t += 0.0004;
-        particles.rotation.y = t * 0.06 + mouse.x * 0.04;
-        particles.rotation.x = mouse.y * 0.025;
-        const posArr = geo.attributes.position.array;
-        for (let i = 0; i < count; i++) {
-          posArr[i * 3 + 1] += Math.sin(t * 0.8 + i * 0.3) * 0.0008;
-        }
-        geo.attributes.position.needsUpdate = true;
-        renderer.render(scene, camera);
-      }
-      animate();
-    }
-
-    function onMouse(e) {
-      mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
-      mouse.y = -(e.clientY / window.innerHeight - 0.5) * 2;
-    }
-
-    function onResize() {
-      if (!canvas || !renderer || !camera) return;
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-      camera.aspect = canvas.clientWidth / canvas.clientHeight;
-      camera.updateProjectionMatrix();
+      startLoop();
     }
 
     init();
 
     return () => {
-      cancelAnimationFrame(animId);
+      disposed = true;
+      stopLoop();
       window.removeEventListener("mousemove", onMouse);
       window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", onVisibility);
+      geo?.dispose();
+      mat?.dispose();
       renderer?.dispose();
+      renderer?.forceContextLoss?.();
     };
   }, []);
 
@@ -116,6 +145,7 @@ export default function CinematicLayer() {
         zIndex: 3,
         pointerEvents: "none",
       }}
+      aria-hidden="true"
     />
   );
 }

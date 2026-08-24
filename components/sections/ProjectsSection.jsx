@@ -27,16 +27,22 @@ export default function ProjectsSection() {
               </div>
             </div>
             <div className={styles.linkCol}>
-              {project.link && project.link !== "PLACEHOLDER_REPO_LINK" ? (
+              {(project.links?.length
+                ? project.links.map((l) => ({ label: l.label, href: l.href }))
+                : project.link && project.link !== "PLACEHOLDER_REPO_LINK"
+                  ? [{ label: "Code", href: project.link }]
+                  : []
+              ).map((l) => (
                 <a
-                  href={project.link}
+                  key={l.label}
+                  href={l.href}
                   target="_blank"
                   rel="noreferrer"
                   className={styles.link}
                 >
-                  Code ↗
+                  {l.label} ↗
                 </a>
-              ) : null}
+              ))}
             </div>
           </article>
         ))}

@@ -21,6 +21,15 @@ function useTypewriter() {
   const [erasing, setErasing] = useState(false);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let paused = false;
+
+    function onVisibility() {
+      paused = document.hidden;
+      if (!paused) schedule();
+    }
+
     const full = ROLES[roleIndex % ROLES.length];
     let delay;
     let action;
@@ -42,8 +51,19 @@ function useTypewriter() {
       action = () => setText(full.slice(0, text.length + 1));
     }
 
-    const t = setTimeout(action, delay);
-    return () => clearTimeout(t);
+    let timer;
+    function schedule() {
+      clearTimeout(timer);
+      if (paused) return;
+      timer = setTimeout(action, delay);
+    }
+    schedule();
+
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
   }, [text, erasing, roleIndex]);
 
   return text;
@@ -59,9 +79,9 @@ export default function HeroSection() {
       {/* Left */}
       <div className={styles.left} data-reveal>
         <p className={styles.greeting}>Hi, I AM</p>
-        <p className={styles.shortRole}>
+        <p className={styles.shortRole} aria-live="off">
           {typedRole}
-          <span className={styles.cursor} />
+          <span className={styles.cursor} aria-hidden="true" />
         </p>
         <h2 className={styles.name}>
           {profile.name.first}
@@ -75,23 +95,15 @@ export default function HeroSection() {
           ))}
         </div>
         <div className={styles.ctaRow}>
-          <a
-            className={styles.ctaBtn}
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
+          <a className={styles.ctaBtn} href="#projects">
             {content.hero.cta} →
           </a>
           {profile.resumeUrl && (
             <a
-              className={styles.ctaBtn}
+              className={`${styles.ctaBtn} ${styles.ctaBtnOutline}`}
               href={profile.resumeUrl}
               target="_blank"
               rel="noreferrer"
-              style={{ background: "transparent", border: "1px solid rgba(235, 178, 124, 0.5)" }}
             >
               Resume ↓
             </a>

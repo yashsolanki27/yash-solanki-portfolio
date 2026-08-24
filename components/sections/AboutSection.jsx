@@ -2,7 +2,7 @@ import profile from "@/data/profile.json";
 import content from "@/data/content.json";
 import styles from "@/styles/sections/AboutSection.module.css";
 
-const SKILLS_DOUBLED = [...profile.strengths, ...profile.strengths];
+const SKILLS = profile.strengths;
 
 export default function AboutSection() {
   return (
@@ -30,8 +30,13 @@ export default function AboutSection() {
       {/* Cinematic scrolling skills band */}
       <div className={styles.skillBand} data-reveal>
         <div className={styles.skillTrack}>
-          {SKILLS_DOUBLED.map((skill, i) => (
-            <span key={`${skill}-${i}`} className={styles.skillItem}>
+          {SKILLS.map((skill) => (
+            <span key={skill} className={styles.skillItem}>
+              {skill}
+            </span>
+          ))}
+          {SKILLS.map((skill) => (
+            <span key={`dup-${skill}`} className={styles.skillItem} aria-hidden="true">
               {skill}
             </span>
           ))}
