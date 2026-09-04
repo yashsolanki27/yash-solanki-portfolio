@@ -9,8 +9,8 @@ export default function DevToolingSection() {
         The toolkit behind<br />application support
       </h2>
       <p className={styles.intro} data-reveal>
-        Application support across enterprise CRM and OSS/BSS platforms — ITIL v4,
-        RCA, SLA compliance, and REST/SOAP API testing.
+        Application support across enterprise CRM and OSS/BSS platforms — root cause analysis,
+        SLA-driven operations, and GenAI-assisted RCA & ticket triage.
       </p>
       <div className={styles.grid} data-reveal>
         {profile.devSkillCategories.map((cat) => (

@@ -17,24 +17,24 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://yash-portfolio-sil
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Yash Solanki | Application Support Engineer",
+  title: "Yash Solanki | AI-Driven Application Engineering",
   description:
-    "Portfolio for Yash Solanki, Application Support Engineer specializing in CRM & OSS/BSS production support, ITIL v4, and root cause analysis.",
+    "Portfolio for Yash Solanki, an Application Support Engineer doing AI-driven Application Engineering — root cause analysis, SLA-driven operations, and GenAI-assisted RCA & ticket triage across enterprise CRM & OSS/BSS platforms.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Yash Solanki | Application Support Engineer",
+    title: "Yash Solanki | AI-Driven Application Engineering",
     description:
-      "Application Support Engineer fixing root causes, not just tickets — across enterprise CRM and OSS/BSS platforms, including a 100M+ subscriber government telecom deployment.",
+      "AI-driven Application Engineering — root cause analysis, SLA-driven operations, and GenAI-assisted RCA & ticket triage across enterprise CRM (Swisscom) and national OSS/BSS platform (BSNL).",
     url: SITE_URL,
     siteName: "Yash Solanki",
     images: [
       {
-        url: "/mainog2.jpg?v=2",
+        url: "/mainog2.jpg?v=3",
         width: 1200,
         height: 630,
-        alt: "Yash Solanki — Application Support Engineer",
+        alt: "Yash Solanki — AI-Driven Application Engineering",
       },
     ],
     locale: "en_US",
@@ -42,10 +42,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yash Solanki | Application Support Engineer",
+    title: "Yash Solanki | AI-Driven Application Engineering",
     description:
-      "Application Support Engineer — CRM & OSS/BSS · ITIL v4 · RCA · SLA-Driven Support.",
-    images: ["/mainog2.jpg?v=2"],
+      "AI-driven Application Engineering — CRM & OSS/BSS · Root Cause Analysis · SLA-Driven Operations.",
+    images: ["/mainog2.jpg?v=3"],
   },
 };
 

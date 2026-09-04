@@ -4,15 +4,15 @@
   },
   "hero": {
     "pills": [
+      "AI-Driven Application Engineering",
       "Application Support",
-      "OSS/BSS",
-      "CRM Platforms",
-      "ITIL v4",
-      "Root Cause Analysis",
-      "SLA Compliance"
+      "RCA & SLA-Driven Operations",
+      "RAG & Embeddings",
+      "MCP & Agentic Workflows",
+      "CRM & OSS/BSS"
     ],
     "cta": "View Work",
-    "availabilityLabel": "Open to Application Support Engineer, ICT Engineer & Functioneel Beheer roles"
+    "availabilityLabel": "Open to AI-driven Application Engineering, Application Support & Functional Application Management roles"
   },
   "sections": {
     "about": "Who I Am",
