@@ -9,7 +9,7 @@
 - Rebuilt from a cinematic template into a fully data-driven site
   (`data/profile.json`, `data/content.json`) with real background/experience/case studies.
 - Added Education section (incl. CGPA); Dev Tooling & Personal Projects kept separate
-  from professional Core Tools to avoid diluting the ITIL/OSS-BSS narrative.
+  from professional Core Tools to avoid diluting the OSS/BSS narrative.
 - Replaced placeholder portrait and OG image with real photo assets.
 - Certifications reflect completed courses only (no dates).
 
